@@ -1,6 +1,17 @@
 # Software-Engineering-Sessional--CSE-3206
 # Muthoy Bazar (Business)
 
+# daily learning progress in Full Stack Web Development including ReactJS (frontend), Node.js + Express (backend), and MongoDB (database). APIs are used to connect frontend and backend.
+
+## Learning process
+
+# Week 1
+✅ Topics Learned
+Introduction to Full Stack Web Development
+What is MERN Stack
+Why use ReactJS + Node.js + Express + MongoDB
+
+
 ## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
