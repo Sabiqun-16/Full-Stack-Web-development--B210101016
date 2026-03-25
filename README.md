@@ -1,23 +1,34 @@
-# Software-Engineering-Sessional--CSE-3206
-# Muthoy Bazar (Business)
+💻 Muthoy Bazar (Full Stack Web Development Project)
 
-Daily learning progress in Full Stack Web Development including ReactJS (frontend), Node.js + Express (backend), and MongoDB (database). APIs are used to connect frontend and backend.
+This project is being developed for the Software Engineering Sessional (CSE-3206) course.
+It documents my daily learning progress in Full Stack Web Development using:
 
-## Learning process
+⚛️ ReactJS (Frontend)
+🌐 Node.js + Express (Backend)
+🗄️ MongoDB (Database)
+🔗 REST API (Frontend ↔ Backend connection)
+📌 Project Objective
 
-# Week 1
-# ✅ Topics Learned
-i. Introduction to Full Stack Web Development
-ii. What is MERN Stack
-iii. Why use ReactJS + Node.js + Express + MongoDB
-* Created GitHub repository
+To build a full-stack e-commerce website where users can browse products, add items to cart, and place orders, while admin can manage products and orders.
 
-# ⚙️ Software Installation
-i. Node.js Installed
-ii. npm/yarn Installed
-iii.react Installed
-iv. VS Code Installed
-v. Git bash Installed
+⚙️ Tech Stack
+Frontend: ReactJS
+Backend: Node.js, Express.js
+Database: MongoDB
+Tools: VS Code, Git, Postman
+📚 Learning Process
+🗓️ Week 1 – Introduction & Setup
+✅ Topics Learned
+ Introduction to Full Stack Web Development
+ What is MERN Stack
+ Why use ReactJS + Node.js + Express + MongoDB
+ GitHub repository creation
+⚙️ Software Installation
+ Node.js Installed
+ npm / yarn Installed
+ React App Setup (create-react-app / Vite)
+ VS Code Installed
+ Git Bash Installed
 
 
 ## Getting Started with Create React App
