@@ -1,34 +1,55 @@
-💻 Muthoy Bazar (Full Stack Web Development Project)
+# 💻 Muthoy Bazar (Full Stack Web Development Project)
 
-This project is being developed for the Software Engineering Sessional (CSE-3206) course.
-It documents my daily learning progress in Full Stack Web Development using:
+This project is being developed for the **Software Engineering Sessional (CSE-3206)** course.  
+It documents my **daily learning progress** in Full Stack Web Development using:
 
-⚛️ ReactJS (Frontend)
-🌐 Node.js + Express (Backend)
-🗄️ MongoDB (Database)
-🔗 REST API (Frontend ↔ Backend connection)
-📌 Project Objective
+- ⚛️ ReactJS (Frontend)  
+- 🌐 Node.js + Express (Backend)  
+- 🗄️ MongoDB (Database)  
+- 🔗 REST API (Frontend ↔ Backend connection)  
 
-To build a full-stack e-commerce website where users can browse products, add items to cart, and place orders, while admin can manage products and orders.
+---
 
-⚙️ Tech Stack
-Frontend: ReactJS
-Backend: Node.js, Express.js
-Database: MongoDB
-Tools: VS Code, Git, Postman
-📚 Learning Process
-🗓️ Week 1 – Introduction & Setup
-✅ Topics Learned
- Introduction to Full Stack Web Development
- What is MERN Stack
- Why use ReactJS + Node.js + Express + MongoDB
- GitHub repository creation
-⚙️ Software Installation
- Node.js Installed
- npm / yarn Installed
- React App Setup (create-react-app / Vite)
- VS Code Installed
- Git Bash Installed
+## 📌 Project Objective
+
+To build a **full-stack e-commerce website** where users can:
+- Browse products  
+- Add items to cart  
+- Place orders  
+
+Admin can:
+- Manage products  
+- Manage orders  
+
+---
+
+## ⚙️ Tech Stack
+
+- **Frontend:** ReactJS  
+- **Backend:** Node.js, Express.js  
+- **Database:** MongoDB  
+- **Tools:** VS Code, Git, Postman  
+
+---
+
+## 📚 Learning Process
+
+### 🗓️ Week 1 – Introduction & Setup
+
+### ✅ Topics Learned
+- Introduction to Full Stack Web Development  
+- What is MERN Stack  
+- Why use ReactJS + Node.js + Express + MongoDB  
+- GitHub repository creation  
+
+---
+
+### ⚙️ Software Installation
+- Node.js Installed  
+- npm / yarn Installed  
+- React App Setup (`create-react-app` / Vite)  
+- VS Code Installed  
+- Git Bash Installed  
 
 
 ## Getting Started with Create React App
