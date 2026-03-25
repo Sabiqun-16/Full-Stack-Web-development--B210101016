@@ -10,36 +10,16 @@ It documents my **daily learning progress** in Full Stack Web Development using:
 
 ---
 
-## 📌 Project Objective
-
-To build a **full-stack e-commerce website** where users can:
-- Browse products  
-- Add items to cart  
-- Place orders  
-
-Admin can:
-- Manage products  
-- Manage orders  
-
----
-
-## ⚙️ Tech Stack
-
-- **Frontend:** ReactJS  
-- **Backend:** Node.js, Express.js  
-- **Database:** MongoDB  
-- **Tools:** VS Code, Git, Postman  
-
----
-
 ## 📚 Learning Process
 
 ### 🗓️ Week 1 – Introduction & Setup
 
-### ✅ Topics Learned
-- Introduction to Full Stack Web Development  
+- Introduction to Full Stack Web Development
+- Project idea & repository setup 
 - What is MERN Stack  
-- Why use ReactJS + Node.js + Express + MongoDB  
+- Why use ReactJS + Node.js + Express + MongoDB
+- Software Installation
+- Creating Project Structure (Frontend & Backend)
 - GitHub repository creation  
 
 ---
