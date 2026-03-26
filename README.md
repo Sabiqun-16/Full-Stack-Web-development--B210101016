@@ -13,6 +13,8 @@ It documents my **daily learning progress** in Full Stack Web Development using:
 ## 📚 Learning Process
 
 ### 🗓️ Week 1 – Introduction & Setup
+<details>
+<summary>▶ View Details</summary>
 
 - Introduction to Full Stack Web Development
 - Project idea & repository setup 
@@ -21,6 +23,7 @@ It documents my **daily learning progress** in Full Stack Web Development using:
 - Software Installation
 - Creating Project Structure (Frontend & Backend)
 - GitHub repository creation  
+
 
 ---
 
@@ -31,6 +34,7 @@ It documents my **daily learning progress** in Full Stack Web Development using:
 - VS Code Installed  
 - Git Bash Installed  
 
+</details>
 
 ## Getting Started with Create React App
 
