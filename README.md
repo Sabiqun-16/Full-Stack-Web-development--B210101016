@@ -14,7 +14,7 @@ It documents my **daily learning progress** in Full Stack Web Development using:
 
 ### 🗓️ Week 1 – Introduction & Setup
 <details>
-<summary>▶ View Details</summary>
+<summary>View Details</summary>
 
 - Introduction to Full Stack Web Development
 - Project idea & repository setup 
