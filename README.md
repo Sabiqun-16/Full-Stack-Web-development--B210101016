@@ -1,5 +1,36 @@
-# Software-Engineering-Sessional--CSE-3206
-# Muthoy Bazar (Business)
+# 💻 Muthoy Bazar (Full Stack Web Development Project)
+
+This project is being developed for the **Software Engineering Sessional (CSE-3206)** course.  
+It documents my **daily learning progress** in Full Stack Web Development using:
+
+- ⚛️ ReactJS (Frontend)  
+- 🌐 Node.js + Express (Backend)  
+- 🗄️ MongoDB (Database)  
+- 🔗 REST API (Frontend ↔ Backend connection)  
+
+---
+
+## 📚 Learning Process
+
+### 🗓️ Week 1 – Introduction & Setup
+
+- Introduction to Full Stack Web Development
+- Project idea & repository setup 
+- What is MERN Stack  
+- Why use ReactJS + Node.js + Express + MongoDB
+- Software Installation
+- Creating Project Structure (Frontend & Backend)
+- GitHub repository creation  
+
+---
+
+### ⚙️ Software Installation
+- Node.js Installed  
+- npm / yarn Installed  
+- React App Setup (`create-react-app` / Vite)  
+- VS Code Installed  
+- Git Bash Installed  
+
 
 ## Getting Started with Create React App
 
