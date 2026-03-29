@@ -1,7 +1,6 @@
 # 💻 Full Stack Web Development Project(🛒 Muthoy Bazar)
 
-## 📌 Project Overview
-This project is being developed for the Software Engineering Sessional (CSE-3206) course.  
+## This project is being developed for the Software Engineering Sessional (CSE-3206) course.  
 It documents my daily learning progress in Full Stack Web Development using:
 
 ⚛️ ReactJS (Frontend)  
@@ -82,6 +81,7 @@ It documents my daily learning progress in Full Stack Web Development using:
 📌 Notes: Improved frontend design and styling skills
 
 📸 Screenshot 
+![Homepage UI](images/preview.png)
 
 </details>
 
