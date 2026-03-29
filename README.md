@@ -80,8 +80,7 @@ It documents my daily learning progress in Full Stack Web Development using:
 
 📌 Notes: Improved frontend design and styling skills
 
-📸
-![Homepage UI]([images/preview.png](https://github.com/Sabiqun-16/Full-Stack-Web-development--B210101016/blob/c656767411b0e20a696b8da20e8fad04847f6eec/Preview.png))
+📸 ![image ult](https://github.com/Sabiqun-16/Full-Stack-Web-development--B210101016/blob/ebea04b65e312803ca35e67f7f8db72a01ba63e9/Preview.png)
 
 </details>
 
