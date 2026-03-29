@@ -1,40 +1,91 @@
-# 💻 Muthoy Bazar (Full Stack Web Development Project)
+# 💻 Full Stack Web Development Project(🛒 Muthoy Bazar)
 
-This project is being developed for the **Software Engineering Sessional (CSE-3206)** course.  
-It documents my **daily learning progress** in Full Stack Web Development using:
+## 📌 Project Overview
+This project is being developed for the Software Engineering Sessional (CSE-3206) course.  
+It documents my daily learning progress in Full Stack Web Development using:
 
-- ⚛️ ReactJS (Frontend)  
-- 🌐 Node.js + Express (Backend)  
-- 🗄️ MongoDB (Database)  
-- 🔗 REST API (Frontend ↔ Backend connection)  
+⚛️ ReactJS (Frontend)  
+🌐 Node.js + Express (Backend)  
+🗄️ MongoDB (Database)  
+🔗 REST API (Frontend ↔ Backend connection)
 
 ---
 
-## 📚 Learning Process
+# 🛠️ Technologies Used
+- HTML
+- CSS
+- JavaScript
+- React.js
+- Node.js
+- Express.js
+- MongoDB
 
-### 🗓️ Week 1 – Introduction & Setup
+---
+
+# 📚 Learning Progress
+
+---
+
+## 🗓️ Week 1 – Setup & React Basics
+
 <details>
-<summary>View Details</summary>
+<summary>▶ View Details</summary>
 
+### ✅ Topics Learned
 - Introduction to Full Stack Web Development
-- Project idea & repository setup 
-- What is MERN Stack  
-- Why use ReactJS + Node.js + Express + MongoDB
-- Software Installation
-- Creating Project Structure (Frontend & Backend)
-- GitHub repository creation  
-
+- MERN Stack Overview
+- Basics of HTML, CSS, JavaScript
+- ReactJS project setup
+- GitHub repository creation
 
 ---
 
-### ⚙️ Software Installation
-- Node.js Installed  
-- npm / yarn Installed  
-- React App Setup (`create-react-app` / Vite)  
-- VS Code Installed  
-- Git Bash Installed  
+### 🚀 Work Done
+- Selected project idea (E-commerce website – Muthoy Bazar)
+- Created GitHub repository
+- Initialized README file
+- Installed Node.js and development tools
+- Setup development environment
+- Created React App
+- Explored project structure
+- Removed default files
+- Created basic components
+
+📌 Notes: Built strong foundation of React and project setup
 
 </details>
+
+---
+
+## 🗓️ Week 2 – UI Design & Frontend Development
+
+<details>
+<summary>▶ View Details</summary>
+
+### ✅ Topics Learned
+- Homepage Design
+- Header Design
+- CSS Styling
+- JavaScript Basics
+
+---
+
+### 🚀 Work Done
+- Started homepage design
+- Implemented HTML & CSS layout
+- Designed Header section
+- Added logo
+- Styled using CSS
+- Practiced JavaScript basics
+- Continued homepage UI development
+
+📌 Notes: Improved frontend design and styling skills
+
+📸 Screenshot 
+
+</details>
+
+---
 
 ## Getting Started with Create React App
 
