@@ -28,7 +28,7 @@ It documents my daily learning progress in Full Stack Web Development using:
 ## 🗓️ Week 1 – Setup & React Basics
 
 <details>
-<summary>▶ View Details</summary>
+<summary> View Details</summary>
 
 ### ✅ Topics Learned
 - Introduction to Full Stack Web Development
@@ -59,7 +59,7 @@ It documents my daily learning progress in Full Stack Web Development using:
 ## 🗓️ Week 2 – UI Design & Frontend Development
 
 <details>
-<summary>▶ View Details</summary>
+<summary> View Details</summary>
 
 ### ✅ Topics Learned
 - Homepage Design
@@ -80,7 +80,7 @@ It documents my daily learning progress in Full Stack Web Development using:
 
 📌 Notes: Improved frontend design and styling skills
 
-📸 Screenshot 
+📸
 ![Homepage UI](images/preview.png)
 
 </details>
