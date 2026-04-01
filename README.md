@@ -30,7 +30,7 @@ It documents my daily learning progress in Full Stack Web Development using:
 <details>
 <summary> View Details</summary>
 
-### ✅ Topics Learned
+### Topics Learned
 - Introduction to Full Stack Web Development
 - MERN Stack Overview
 - Basics of HTML, CSS, JavaScript
@@ -39,7 +39,7 @@ It documents my daily learning progress in Full Stack Web Development using:
 
 ---
 
-### 🚀 Work Done
+###  Work Done
 - Selected project idea (E-commerce website – Muthoy Bazar)
 - Created GitHub repository
 - Initialized README file
@@ -61,7 +61,7 @@ It documents my daily learning progress in Full Stack Web Development using:
 <details>
 <summary> View Details</summary>
 
-### ✅ Topics Learned
+### Topics Learned
 - Homepage Design
 - Header Design
 - CSS Styling
@@ -69,7 +69,7 @@ It documents my daily learning progress in Full Stack Web Development using:
 
 ---
 
-### 🚀 Work Done
+### Work Done
 - Started homepage design
 - Implemented HTML & CSS layout
 - Designed Header section
@@ -85,6 +85,36 @@ It documents my daily learning progress in Full Stack Web Development using:
 </details>
 
 ---
+## 🗓️ Week 3 – Header UI Enhancement
+
+<details>
+<summary>▶ View Details</summary>
+
+### 🎯 Focus
+Improving header design and adding interactive UI elements.
+
+### ✅ Topics Learned
+- Header layout design
+- Search bar UI structure
+- Button design and alignment
+- Basic UI/UX improvement concepts
+- CSS positioning and styling
+
+---
+
+### ✅ Work Done
+- Created Header Search Bar
+- Designed Search Button
+- Added User Button (Login/Profile icon)
+- Improved header layout and alignment
+- Applied CSS styling for better UI appearance
+
+---
+
+📸 Updated Homepage ![image ult]() 
+
+
+</details>
 
 ## Getting Started with Create React App
 
