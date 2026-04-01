@@ -88,9 +88,9 @@ It documents my daily learning progress in Full Stack Web Development using:
 ## 🗓️ Week 3 – Header UI Enhancement
 
 <details>
-<summary>▶ View Details</summary>
+<summary>View Details</summary>
 
-### ✅ Topics Learned
+### Topics Learned
 - Header layout design
 - Search bar UI structure
 - Button design and alignment
@@ -99,7 +99,7 @@ It documents my daily learning progress in Full Stack Web Development using:
 
 ---
 
-### ✅ Work Done
+### Work Done
 - Created Header Search Bar
 - Designed Search Button
 - Added User Button (Login/Profile icon)
