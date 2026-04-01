@@ -28,7 +28,7 @@ It documents my daily learning progress in Full Stack Web Development using:
 ## 🗓️ Week 1 – Setup & React Basics
 
 <details>
-<summary>▶ View Details</summary>
+<summary> View Details</summary>
 
 ### ✅ Topics Learned
 - Introduction to Full Stack Web Development
@@ -59,7 +59,7 @@ It documents my daily learning progress in Full Stack Web Development using:
 ## 🗓️ Week 2 – UI Design & Frontend Development
 
 <details>
-<summary>▶ View Details</summary>
+<summary> View Details</summary>
 
 ### ✅ Topics Learned
 - Homepage Design
@@ -80,8 +80,7 @@ It documents my daily learning progress in Full Stack Web Development using:
 
 📌 Notes: Improved frontend design and styling skills
 
-📸 Screenshot 
-![Homepage UI](images/preview.png)
+📸Homepage ![image ult](https://github.com/Sabiqun-16/Full-Stack-Web-development--B210101016/blob/ebea04b65e312803ca35e67f7f8db72a01ba63e9/Preview.png)
 
 </details>
 
