@@ -90,9 +90,6 @@ It documents my daily learning progress in Full Stack Web Development using:
 <details>
 <summary>▶ View Details</summary>
 
-### 🎯 Focus
-Improving header design and adding interactive UI elements.
-
 ### ✅ Topics Learned
 - Header layout design
 - Search bar UI structure
@@ -111,7 +108,7 @@ Improving header design and adding interactive UI elements.
 
 ---
 
-📸 Updated Homepage ![image ult]() 
+📸 Updated Homepage ![image ult](https://github.com/Sabiqun-16/Full-Stack-Web-development--B210101016/blob/d01305623889aabb26f247e2fc2a0a2db9b9d83b/Image%202026-04-01%20at%2012.11.28%20PM.jpeg) 
 
 
 </details>
