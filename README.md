@@ -112,6 +112,7 @@ It documents my daily learning progress in Full Stack Web Development using:
 
 
 </details>
+
 ---
 
 ## 🗓️ Week 4 – Header Improvement & UI Refinement
@@ -139,6 +140,7 @@ Enhancing header UI and improving overall design.
 - Made UI more clean and organized
 
 </details>
+
 ---
 
 ## Getting Started with Create React App
