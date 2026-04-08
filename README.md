@@ -113,6 +113,37 @@ It documents my daily learning progress in Full Stack Web Development using:
 
 </details>
 
+## 🗓️ Week 4 – Header Improvement & UI Refinement
+
+<details>
+<summary>View Details</summary>
+
+### 🎯 Focus
+Enhancing header UI and improving overall design.
+
+### ✅ Topics Learned
+- Basic HTML structure and elements (practice)
+- Introduction to JavaScript (event handling – basic)
+- UI alignment and spacing
+- CSS styling improvements
+- Component layout refinement
+
+---
+
+### ✅ Work Done
+- Improved Header Design
+- Enhanced Search Bar UI
+- Adjusted layout and spacing
+- Refined User & Cart button alignment
+- Made UI more clean and organized
+
+---
+
+📸 Updated UI Preview  
+![Week 4 Preview](images/week4-preview.png)
+
+</details>
+
 ## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
