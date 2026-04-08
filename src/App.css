@@ -1,41 +1,40 @@
-*{margin: 0px; padding: 0px;}
+*{margin: 0px; padding: 0px; box-sizing: border-box;}
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
-
-body{font-family: "Lato", sans-serif;font-size: 14px;}
+body{font-family: "Lato", sans-serif; font-size: 14px;}
 
 .bg-blue{background: #5e79f1;}
 
-.headerWrapper .top-strip{padding: 8px 0px;}
-.headerWrapper .top-strip{color: #fff; font-size: 13px; font-weight: 700;}
+.headerWrapper .top-strip{padding: 8px 0px; color: #fff; font-size: 13px; font-weight: 700; text-align: center;}
 
-.headerWrapper .header{width: 100%; height: auto; padding: 15px 0px;}
-.logoWrapper img{ width: 75%;}
+.headerWrapper .header{width: 100%; height: auto; padding: 15px 30px; display: flex; align-items: center; justify-content: space-between;}
+.logoWrapper img{width: 170px;}
 
-.headerWrapper .header .part2 .countryDrop{width: 170px; height: 60px; min-width: 170px;color:
-     #000 !important; border:1px solid rgba(0,0,0,0.2); 
-     border-radius: 7px !important; padding: 10px 15px !important;}
-.headerWrapper .header .part2 .countryDrop{text-align: left;
-     justify-content: flex-start !important;}
-.headerWrapper .header .part2 .countryDrop .label{font-size: 12px !important; text-transform: 
-    capitalize!important; color: rgba(0,0,0,0.4) !important; line-height: 16px;}
-.headerWrapper .header .part2 .countryDrop .name{font-size: 12px !important; text-transform: 
-    capitalize!important; color: #2d6aab !important; font-weight: 700;line-height: 16px;}
+.headerWrapper .header .part2{display: flex; align-items: center; flex: 1; margin: 0 40px; gap: 15px;}
+.headerWrapper .header .part2 .countryDrop{width: 170px; height: 60px; min-width: 170px; color: #000 !important; border: 1px solid rgba(0,0,0,0.2) !important; 
+    border-radius: 7px !important; padding: 10px 15px !important; text-align: left; display: flex !important; align-items: center !important; justify-content: 
+    flex-start !important; text-transform: none !important;}
+.headerWrapper .header .part2 .countryDrop .info{display: flex; flex-direction: column; align-items: flex-start; justify-content: center;}
+.headerWrapper .header .part2 .countryDrop .label{font-size: 11px !important; text-transform: capitalize !important; color: rgba(0,0,0,0.5) !important; line-height: 14px;}
+.headerWrapper .header .part2 .countryDrop .name{font-size: 13px !important; text-transform: capitalize !important; color: #2d6aab !important; font-weight: 700; line-height: 16px;}
+.headerWrapper .header .part2 .countryDrop .ms-auto{margin-left: auto !important; display: flex; align-items: center;}
+.headerWrapper .header .part2 .countryDrop .ms-auto svg{opacity: 0.8; font-size: 14px; color: #000;}
 
-.headerWrapper .header .part2 .countryDrop span.ml-auto svg{opacity:0.7; }
-
-header .headerSearch{width: 60%; height: 60px; background: #f3f4f7; padding: 10px;
-    position: relative; border-radius: 10px; border: 1px solid rgba(0,0,0,0.1)}
-header .headerSearch input{background: transparent !important; outline: none !important;
-    font-size: 10px; color: rgba(0,0,0,0.8); width: 100%; height: 40px; border: 0px !important;
-    padding: 0px 20px !important;}
-
-header .headerSearch button{ position: absolute; top: 10px; right: 15px; z-index: 100;
-    min-width: 40px !important; height: 40px !important; width: 50px !important; border-radius:50% 
-    !important; color: #000;}
+header .headerSearch{flex: 1; height: 60px; background: #f3f4f7; padding: 10px; position: relative; border-radius: 10px; border: 1px solid rgba(0,0,0,0.1);
+     display: flex; align-items: center;}
+header .headerSearch input{background: transparent !important; outline: none !important; font-size: 15px; color: rgba(0,0,0,0.8); width: 100%; height: 40px;
+     border: 0px !important; padding: 0px 45px 0px 10px !important;}
+header .headerSearch button{position: absolute; top: 50%; right: 15px; transform: translateY(-50%); z-index: 100; min-width: 40px !important; height: 40px 
+    !important; width: 50px !important; border-radius: 50% !important; color: #000; background: transparent; border: none;}
 header .headerSearch button svg{font-size: 25px;}
 
-header .part3 .circle{align-items: center; justify-content: center; min-width: 45px !important;
-height:  45px !important; width: 45px !important;border-radius: 50% !important;
-border: 1px solid rgba(0,0,0,0.1) !important; color: #000;}
-
+.headerWrapper .header .part3{display: flex; align-items: center; gap: 15px;}
+header .part3 .circle{display: flex; align-items: center; justify-content: center; min-width: 45px !important; height: 45px !important; 
+    width: 45px !important; border-radius: 50% !important; border: 1px solid rgba(0,0,0,0.1) !important; color: #000; position: relative;}
 header .part3 .circle svg{font-size: 22px;}
+
+.carTab{display: flex; align-items: center; gap: 10px;}
+.carTab .price{font-size: 18px; color: rgba(0,0,0,0.8); font-weight: 700;}
+.carTab button{background: #fff1ee !important; min-width: 45px !important; height: 45px !important; border-radius: 50% !important; position: relative;}
+.carTab button svg{color: #ea2b0f !important; font-size: 22px;}
+.carTab .count{position: absolute; top: -5px; right: -5px; background: #ea2b0f; border-radius: 50%; color: #fff; width: 20px; height: 20px; display: flex; 
+    align-items: center; justify-content: center; font-size: 12px; font-weight: 700; z-index: 10;}
