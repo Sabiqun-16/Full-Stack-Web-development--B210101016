@@ -137,10 +137,6 @@ Enhancing header UI and improving overall design.
 - Refined User & Cart button alignment
 - Made UI more clean and organized
 
----
-
-📸 Updated UI Preview  
-![Week 4 Preview](images/week4-preview.png)
 
 </details>
 
