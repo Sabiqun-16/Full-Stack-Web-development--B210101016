@@ -137,7 +137,7 @@ Enhancing header UI and improving overall design.
 - Refined User & Cart button alignment
 - Made UI more clean and organized
 
-
+---
 </details>
 
 ## Getting Started with Create React App
