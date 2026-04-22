@@ -142,6 +142,34 @@ Enhancing header UI and improving overall design.
 </details>
 
 ---
+## 🗓️ Week 5 – Navigation Bar Development
+
+<details>
+<summary>▶ View Details</summary>
+
+### 🎯 Focus
+Adding navigation section and improving UI structure.
+
+### ✅ Topics Learned
+- React component structure (functional component)
+- Basic JSX syntax
+- CSS styling for navigation
+- Layout using grid system (row, column)
+- Button design and alignment
+
+---
+
+### ✅ Work Done
+- Created Navigation component
+- Added "ALL CATEGORIES" button
+- Integrated icons (menu & dropdown)
+- Structured layout using container, row, column
+- Applied CSS for styling navigation bar
+- Improved overall header + navigation UI
+
+</details>
+---
+
 
 ## Getting Started with Create React App
 
