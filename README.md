@@ -120,10 +120,10 @@ It documents my daily learning progress in Full Stack Web Development using:
 <details>
 <summary>View Details</summary>
 
-### 🎯 Focus
+### Focus
 Enhancing header UI and improving overall design.
 
-### ✅ Topics Learned
+### Topics Learned
 - Basic HTML structure and elements (practice)
 - Introduction to JavaScript (event handling – basic)
 - UI alignment and spacing
@@ -132,7 +132,7 @@ Enhancing header UI and improving overall design.
 
 ---
 
-### ✅ Work Done
+### Work Done
 - Improved Header Design
 - Enhanced Search Bar UI
 - Adjusted layout and spacing
@@ -142,6 +142,7 @@ Enhancing header UI and improving overall design.
 </details>
 
 ---
+
 ## 🗓️ Week 5 – Navigation Bar Development
 
 <details>
@@ -168,6 +169,39 @@ Adding navigation section and improving UI structure.
 - Improved overall header + navigation UI
 
 </details>
+
+---
+
+
+## 🗓️ Week 6 – Navigation Menu & UI Design
+
+<details>
+<summary>▶ View Details</summary>
+
+### 🎯 Focus
+Building navigation menu and improving UI design.
+
+### ✅ Topics Learned
+- React Router basics (`Link`)
+- Navigation menu structure
+- UI design and layout improvement
+- CSS styling for menu alignment
+- Flexbox (`d-flex`, `align-items-center`)
+
+---
+
+### ✅ Work Done
+- Added navigation menu section
+- Created multiple page links (Home, Fashion, Electronic, etc.)
+- Used React Router `Link` for routing
+- Styled navigation menu using CSS
+- Improved layout alignment and spacing
+- Enhanced overall UI design
+
+---
+
+</details>
+
 ---
 
 
