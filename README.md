@@ -146,12 +146,12 @@ Enhancing header UI and improving overall design.
 ## 🗓️ Week 5 – Navigation Bar Development
 
 <details>
-<summary>▶ View Details</summary>
+<summary> View Details</summary>
 
-### 🎯 Focus
+###  Focus
 Adding navigation section and improving UI structure.
 
-### ✅ Topics Learned
+###  Topics Learned
 - React component structure (functional component)
 - Basic JSX syntax
 - CSS styling for navigation
@@ -160,7 +160,7 @@ Adding navigation section and improving UI structure.
 
 ---
 
-### ✅ Work Done
+###  Work Done
 - Created Navigation component
 - Added "ALL CATEGORIES" button
 - Integrated icons (menu & dropdown)
@@ -176,12 +176,12 @@ Adding navigation section and improving UI structure.
 ## 🗓️ Week 6 – Navigation Menu & UI Design
 
 <details>
-<summary>▶ View Details</summary>
+<summary> View Details</summary>
 
-### 🎯 Focus
+###  Focus
 Building navigation menu and improving UI design.
 
-### ✅ Topics Learned
+###  Topics Learned
 - React Router basics (`Link`)
 - Navigation menu structure
 - UI design and layout improvement
@@ -190,7 +190,7 @@ Building navigation menu and improving UI design.
 
 ---
 
-### ✅ Work Done
+###  Work Done
 - Added navigation menu section
 - Created multiple page links (Home, Fashion, Electronic, etc.)
 - Used React Router `Link` for routing
