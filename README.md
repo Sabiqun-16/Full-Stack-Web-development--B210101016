@@ -1,0 +1,246 @@
+# CodeForces-Problem
+# 💻 Full Stack Web Development Project(🛒 Muthoy Bazar)
+
+## This project is being developed for the Software Engineering Sessional (CSE-3206) course.  
+It documents my daily learning progress in Full Stack Web Development using:
+
+⚛️ ReactJS (Frontend)  
+🌐 Node.js + Express (Backend)  
+🗄️ MongoDB (Database)  
+🔗 REST API (Frontend ↔ Backend connection)
+
+---
+
+# 🛠️ Technologies Used
+- HTML
+- CSS
+- JavaScript
+- React.js
+- Node.js
+- Express.js
+- MongoDB
+
+---
+
+# 📚 Learning Progress
+
+---
+
+## 🗓️ Week 1 – Setup & React Basics
+
+<details>
+<summary> View Details</summary>
+
+### Topics Learned
+- Introduction to Full Stack Web Development
+- MERN Stack Overview
+- Basics of HTML, CSS, JavaScript
+- ReactJS project setup
+- GitHub repository creation
+
+---
+
+###  Work Done
+- Selected project idea (E-commerce website – Muthoy Bazar)
+- Created GitHub repository
+- Initialized README file
+- Installed Node.js and development tools
+- Setup development environment
+- Created React App
+- Explored project structure
+- Removed default files
+- Created basic components
+
+📌 Notes: Built strong foundation of React and project setup
+
+</details>
+
+---
+
+## 🗓️ Week 2 – UI Design & Frontend Development
+
+<details>
+<summary> View Details</summary>
+
+### Topics Learned
+- Homepage Design
+- Header Design
+- CSS Styling
+- JavaScript Basics
+
+---
+
+### Work Done
+- Started homepage design
+- Implemented HTML & CSS layout
+- Designed Header section
+- Added logo
+- Styled using CSS
+- Practiced JavaScript basics
+- Continued homepage UI development
+
+📌 Notes: Improved frontend design and styling skills
+
+📸Homepage ![image ult](https://github.com/Sabiqun-16/Full-Stack-Web-development--B210101016/blob/ebea04b65e312803ca35e67f7f8db72a01ba63e9/Preview.png)
+
+</details>
+
+---
+## 🗓️ Week 3 – Header UI Enhancement
+
+<details>
+<summary>View Details</summary>
+
+### Topics Learned
+- Header layout design
+- Search bar UI structure
+- Button design and alignment
+- Basic UI/UX improvement concepts
+- CSS positioning and styling
+
+---
+
+### Work Done
+- Created Header Search Bar
+- Designed Search Button
+- Added User Button (Login/Profile icon)
+- Improved header layout and alignment
+- Applied CSS styling for better UI appearance
+
+---
+
+📸 Updated Homepage ![image ult](https://github.com/Sabiqun-16/Full-Stack-Web-development--B210101016/blob/d01305623889aabb26f247e2fc2a0a2db9b9d83b/Image%202026-04-01%20at%2012.11.28%20PM.jpeg) 
+
+
+</details>
+
+---
+
+## 🗓️ Week 4 – Header Improvement & UI Refinement
+
+<details>
+<summary>View Details</summary>
+
+### Focus
+Enhancing header UI and improving overall design.
+
+### Topics Learned
+- Basic HTML structure and elements (practice)
+- Introduction to JavaScript (event handling – basic)
+- UI alignment and spacing
+- CSS styling improvements
+- Component layout refinement
+
+---
+
+### Work Done
+- Improved Header Design
+- Enhanced Search Bar UI
+- Adjusted layout and spacing
+- Refined User & Cart button alignment
+- Made UI more clean and organized
+
+</details>
+
+---
+
+## 🗓️ Week 5 – Navigation Bar Development
+
+<details>
+<summary> View Details</summary>
+
+###  Focus
+Adding navigation section and improving UI structure.
+
+###  Topics Learned
+- React component structure (functional component)
+- Basic JSX syntax
+- CSS styling for navigation
+- Layout using grid system (row, column)
+- Button design and alignment
+
+---
+
+###  Work Done
+- Created Navigation component
+- Added "ALL CATEGORIES" button
+- Integrated icons (menu & dropdown)
+- Structured layout using container, row, column
+- Applied CSS for styling navigation bar
+- Improved overall header + navigation UI
+
+</details>
+
+---
+
+
+## 🗓️ Week 6 – Navigation Menu & UI Design
+
+<details>
+<summary> View Details</summary>
+
+###  Focus
+Building navigation menu and improving UI design.
+
+###  Topics Learned
+- React Router basics (`Link`)
+- Navigation menu structure
+- UI design and layout improvement
+- CSS styling for menu alignment
+- Flexbox (`d-flex`, `align-items-center`)
+
+---
+
+###  Work Done
+- Added navigation menu section
+- Created multiple page links (Home, Fashion, Electronic, etc.)
+- Used React Router `Link` for routing
+- Styled navigation menu using CSS
+- Improved layout alignment and spacing
+- Enhanced overall UI design
+
+---
+
+</details>
+
+---
+
+
+## Getting Started with Create React App
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+### Available Scripts
+
+In the project directory, you can run:
+
+#### `npm start`
+Runs the app in development mode.  
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.  
+The page will reload when you make changes. You may also see any lint errors in the console.
+
+#### `npm test`
+Launches the test runner in the interactive watch mode.  
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+
+#### `npm run build`
+Builds the app for production to the `build` folder.  
+It correctly bundles React in production mode and optimizes the build for the best performance.  
+The build is minified and the filenames include the hashes.  
+Your app is ready to be deployed!  
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+#### `npm run eject`
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**  
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time.  
+This command will remove the single build dependency from your project and copy all configuration files and dependencies (webpack, Babel, ESLint, etc.) into your project so you have full control.  
+All other commands (except `eject`) will still work.
+
+### Learn More
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).  
+To learn React, check out the [React documentation](https://reactjs.org/).
+
+### Code Splitting
+[https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+
+### Analyzing the Bundle Size
