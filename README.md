@@ -1,4 +1,3 @@
-# CodeForces-Problem
 # 💻 Full Stack Web Development Project(🛒 Muthoy Bazar)
 
 ## This project is being developed for the Software Engineering Sessional (CSE-3206) course.  
