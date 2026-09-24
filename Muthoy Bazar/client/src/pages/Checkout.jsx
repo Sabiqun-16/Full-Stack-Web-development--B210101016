@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import api from '../api/api';
 import { useCart } from '../context/CartContext';
 import { useAuth } from '../context/AuthContext';
@@ -7,7 +7,6 @@ import { useAuth } from '../context/AuthContext';
 export default function Checkout() {
   const { cart, summary, clearCartLocal, refreshCart } = useCart();
   const { user } = useAuth();
-  const navigate = useNavigate();
   const items = cart.items || [];
 
   const [form, setForm] = useState({ fullName: user?.name || '', phone: user?.phone || '', addressLine: '', city: '', postalCode: '' });
