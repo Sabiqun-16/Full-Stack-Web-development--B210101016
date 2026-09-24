@@ -183,6 +183,25 @@ Product units are restricted to `g`, `kg`, `ml`, `l`, `pcs`, `pack`, and `dozen`
 - npm
 - A running MongoDB instance, local or MongoDB Atlas
 
+### Quick start after cloning from GitHub
+
+From inside the `Muthoy Bazar` folder, run:
+
+```bash
+npm run setup
+```
+
+This installs both client and server dependencies and creates `client/.env` and `server/.env` from their example files when they do not already exist. Open `server/.env` and set a working `MONGO_URI` plus a strong `JWT_SECRET` before continuing.
+
+Load the development catalog and start both applications with:
+
+```bash
+npm run seed
+npm run dev
+```
+
+The API runs at `http://localhost:5000` and the frontend runs at `http://localhost:3000`. Stop both processes with `Ctrl+C`.
+
 ### Start the backend
 
 ```bash
@@ -216,6 +235,8 @@ Available server scripts:
 | `npm run dev` | Start with Nodemon |
 | `npm run seed` | Recreate seeded categories, products, carts, orders, and reviews; create seed users |
 | `npm run seed:destroy` | Delete all seeded database data, including users |
+
+The root convenience commands are `npm run setup`, `npm run seed`, `npm run dev`, and `npm run build`. The separate client/server commands below are useful when running or deploying only one part of the application.
 
 ### Start the frontend
 
