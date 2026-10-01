@@ -103,7 +103,8 @@ const RAW = [
   ['Honey', 'Sundarban Honey', 'Shamuk', 550, 500, 20, 500, 'g', 'Wild forest honey from the Sundarbans.', [0,0,1]],
 
   // Dates
-  ['Dates', 'Ajwa Dates', 'Al Madinah', 650, 0, 25, 500, 'g', 'Premium Ajwa dates from Madinah.', [1,0,0]],
+  ['Dates', 'Ajwa Dates', 'Al Madinah', 650, 0, 25, 500, 'g', 'Premium Ajwa dates from Madinah.', [1,0,0] , [
+  "https://kommodo.ai/i/dAGR94o9R86fmRqY54h3"]],
   ['Dates', 'Mariam Dates', 'Al Madinah', 480, 450, 30, 500, 'g', 'Soft, sweet Mariam dates.', [0,1,0]],
   ['Dates', 'Dried Dates (Khejur)', 'Fresh', 220, 0, 45, 500, 'g', 'Everyday dried dates, naturally sweet.', [0,0,0]],
 
@@ -178,7 +179,7 @@ const RAW = [
   ['Shampoo', 'Anti-Dandruff Shampoo', 'Head & Shoulders', 260, 240, 35, 200, 'ml', 'Effective anti-dandruff shampoo.', [1,0,1]],
 
   // Toothpaste
-  ['Toothpaste', 'Fluoride Toothpaste', 'Colgate', 95, 0, 100, 150, 'g', 'Fluoride toothpaste for daily cavity protection.', [0,1,0]],
+  ['Toothpaste', 'Fluoride Toothpaste', 'Colgate', 95, 0, 100, 150, 'g', 'Fluoride toothpaste for daily cavity protection.', [0,1,0] ,['/products/Fluoride%20Toothpast%20Colgate.png']],
   ['Toothpaste', 'Whitening Toothpaste', 'Pepsodent', 110, 0, 60, 150, 'g', 'Whitening toothpaste for a brighter smile.', [0,0,0]],
 
   // Dish Wash

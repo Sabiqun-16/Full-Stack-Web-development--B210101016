@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 import { useAuth } from '../context/AuthContext';
 import { useToast } from '../context/ToastContext';
+import ProductImage from './ProductImage';
 
 export default function ProductCard({ product }) {
   const { addToCart } = useCart();
@@ -46,11 +47,7 @@ export default function ProductCard({ product }) {
       ) : null}
 
       <Link to={`/product/${product._id}`} className="product-media">
-        <img
-  src={product.images?.[0]}
-  alt={product.name}
-  loading="lazy"
-/>
+        <ProductImage product={product} loading="lazy" />
       </Link>
 
       <div className="product-body">

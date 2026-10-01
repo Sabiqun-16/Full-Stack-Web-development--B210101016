@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import api from '../api/api';
 import ProductCard from '../components/ProductCard';
+import ProductImage from '../components/ProductImage';
 import { useAuth } from '../context/AuthContext';
 import { useCart } from '../context/CartContext';
 import { useToast } from '../context/ToastContext';
@@ -93,7 +94,7 @@ export default function ProductDetails() {
       <div className="wrap">
         <div className="pd-layout">
           <div>
-            <div className="pd-media-main"><img src={resolveImageUrl(product.images?.[activeImg])} alt={product.name} /></div>
+            <div className="pd-media-main"><ProductImage product={{ ...product, images: [product.images?.[activeImg]] }} /></div>
             <div className="pd-thumbs">
               {product.images?.map((img, i) => (
                 <img key={i} src={resolveImageUrl(img)} alt="" className={i === activeImg ? 'active' : ''} onClick={() => setActiveImg(i)} />

@@ -1,5 +1,15 @@
 const Product = require('../models/Product');
 
+const parseImageList = (value) => {
+  if (!value) return [];
+  try {
+    const images = JSON.parse(value);
+    return Array.isArray(images) ? images.filter((image) => typeof image === 'string' && image.trim()) : [];
+  } catch {
+    return [];
+  }
+};
+
 // GET /api/products
 // Supports: search (q), category, brand, min/max price, sort, page, limit,
 // featured, bestSeller, newArrival flags.
@@ -130,8 +140,14 @@ exports.getBrands = async (req, res, next) => {
 exports.createProduct = async (req, res, next) => {
   try {
     const body = { ...req.body };
-    if (req.files && req.files.length) {
-      body.images = req.files.map((f) => `/uploads/${f.filename}`);
+    if (req.files?.length) {
+      body.images = [
+        ...parseImageList(req.body.existingImages),
+        ...parseImageList(req.body.imageUrls),
+        ...req.files.map((file) => `/uploads/${file.filename}`),
+      ];
+      delete body.existingImages;
+      delete body.imageUrls;
     }
     const product = await Product.create(body);
     res.status(201).json({ success: true, product });
@@ -144,8 +160,14 @@ exports.createProduct = async (req, res, next) => {
 exports.updateProduct = async (req, res, next) => {
   try {
     const body = { ...req.body };
-    if (req.files && req.files.length) {
-      body.images = req.files.map((f) => `/uploads/${f.filename}`);
+    if (req.files?.length) {
+      body.images = [
+        ...parseImageList(req.body.existingImages),
+        ...parseImageList(req.body.imageUrls),
+        ...req.files.map((file) => `/uploads/${file.filename}`),
+      ];
+      delete body.existingImages;
+      delete body.imageUrls;
     }
     const product = await Product.findByIdAndUpdate(req.params.id, body, {
       new: true,

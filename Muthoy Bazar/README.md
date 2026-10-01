@@ -12,7 +12,7 @@ Muthoy Bazar is a full-stack grocery and household-essentials e-commerce applica
 | Backend | Node.js, Express 4, Mongoose 8 |
 | Database | MongoDB |
 | Authentication | JWT and bcryptjs |
-| File uploads | Multer |
+| Product images | Local server uploads, static files in `client/public/products`, or hosted image URLs |
 | Validation and utilities | express-validator, slugify, dotenv, CORS, Morgan |
 
 ### Main capabilities
@@ -153,8 +153,8 @@ Every endpoint below requires both a valid JWT and `role: admin`.
 | GET | `/api/admin/users` | List users |
 | PUT | `/api/admin/users/:id` | Update role or active status |
 | DELETE | `/api/admin/users/:id` | Delete a user |
-| POST | `/api/admin/products` | Create a product; accepts up to five `images` files |
-| PUT | `/api/admin/products/:id` | Update a product and optional images |
+| POST | `/api/admin/products` | Create a product with uploaded files, image paths, or URLs |
+| PUT | `/api/admin/products/:id` | Update a product and its images |
 | DELETE | `/api/admin/products/:id` | Delete a product |
 | POST | `/api/admin/categories` | Create a category |
 | PUT | `/api/admin/categories/:id` | Update a category |
@@ -283,7 +283,7 @@ Suggested smoke test:
 - The effective product price uses `discountPrice` when it is greater than zero; otherwise it uses `price`.
 - Customers can only access their own cart and orders.
 - Admin endpoints require both authentication and the admin role.
-- Product image uploads accept up to five files per request through the `images` field. Uploaded files are served from `/uploads`.
+- Product images can be uploaded from the admin form to `server/uploads` and are served from `/uploads`. Static files in `client/public/products` are also matched by product name, or use hosted image URLs. Local server uploads are not persistent on serverless hosting such as Vercel.
 
 ## 9. Security and Deployment Notes
 

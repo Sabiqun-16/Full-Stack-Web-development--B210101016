@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import api from '../../api/api';
 import { useToast } from '../../context/ToastContext';
-import { resolveImageUrl } from '../../utils/image';
+import { findLocalProductImagePath, getLocalProductImagePath, resolveImageUrl } from '../../utils/image';
 
 const emptyForm = { name: '', brand: '', category: '', description: '', price: '', discountPrice: '', stock: '', sku: '', weight: '', unit: 'g', isFeatured: false, isBestSeller: false, isNewArrival: false, images: '' };
 
@@ -15,7 +15,7 @@ export default function AdminProducts() {
   const [editingId, setEditingId] = useState(null);
   const [form, setForm] = useState(emptyForm);
   const [existingImages, setExistingImages] = useState([]); // image paths already saved on the product
-  const [newFiles, setNewFiles] = useState([]); // File objects picked in this session, not yet uploaded
+  const [newFiles, setNewFiles] = useState([]);
   const [uploading, setUploading] = useState(false);
   const { showToast } = useToast();
 
@@ -34,7 +34,7 @@ export default function AdminProducts() {
   const openEdit = (p) => {
     setEditingId(p._id);
     setForm({
-      name: p.name, brand: p.brand, category: p.category?._id || p.category, description: p.description,
+      name: p.name, brand: p.brand, category: p.category?._id || p.category || '', description: p.description,
       price: p.price, discountPrice: p.discountPrice, stock: p.stock, sku: p.sku, weight: p.weight, unit: p.unit,
       isFeatured: p.isFeatured, isBestSeller: p.isBestSeller, isNewArrival: p.isNewArrival, images: '',
     });
@@ -42,32 +42,32 @@ export default function AdminProducts() {
     setNewFiles([]);
     setModalOpen(true);
   };
-
   const handleFilePick = (e) => {
     const picked = Array.from(e.target.files || []);
-    setNewFiles((prev) => [...prev, ...picked].slice(0, 5)); // Multer is configured for max 5 images
-    e.target.value = ''; // allow re-picking the same file if removed
+    const urlCount = form.images.split(',').map((url) => url.trim()).filter(Boolean).length;
+    const remaining = Math.max(0, 5 - existingImages.length - urlCount - newFiles.length);
+    setNewFiles((prev) => [...prev, ...picked.slice(0, remaining)]);
+    e.target.value = '';
   };
   const removeNewFile = (idx) => setNewFiles((prev) => prev.filter((_, i) => i !== idx));
   const removeExistingImage = (idx) => setExistingImages((prev) => prev.filter((_, i) => i !== idx));
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const urlImages = form.images.split(',').map((s) => s.trim()).filter(Boolean);
+    if (existingImages.length + urlImages.length + newFiles.length > 5) {
+      showToast('Keep a maximum of 5 product images');
+      return;
+    }
     setUploading(true);
     try {
-      const urlImages = form.images.split(',').map((s) => s.trim()).filter(Boolean);
-
-      if (newFiles.length > 0) {
-        // Real file upload: send multipart/form-data straight to the Multer-backed endpoint.
-        // Uploaded files REPLACE the image set on this save (kept images + typed URLs are dropped
-        // in favour of the freshly uploaded files, since the server always overwrites `images`
-        // when files are present). Upload your existing/URL images again as needed, or run
-        // separate saves if you want to accumulate images from different sources over time.
+      if (newFiles.length) {
         const fd = new FormData();
-        Object.entries(form).forEach(([key, val]) => {
-          if (key === 'images') return;
-          fd.append(key, val);
+        Object.entries(form).forEach(([key, value]) => {
+          if (key !== 'images' && !(key === 'category' && !value)) fd.append(key, value);
         });
+        fd.append('existingImages', JSON.stringify(urlImages.length ? [] : existingImages));
+        fd.append('imageUrls', JSON.stringify(urlImages));
         newFiles.forEach((file) => fd.append('images', file));
         if (editingId) {
           await api.put(`/admin/products/${editingId}`, fd, { headers: { 'Content-Type': 'multipart/form-data' } });
@@ -75,13 +75,12 @@ export default function AdminProducts() {
           await api.post('/admin/products', fd, { headers: { 'Content-Type': 'multipart/form-data' } });
         }
       } else {
-        // No new files picked: send JSON, keeping existing images plus any pasted URLs.
-        const payload = { ...form, images: [...existingImages, ...urlImages] };
-        if (editingId) {
-          await api.put(`/admin/products/${editingId}`, payload);
-        } else {
-          await api.post('/admin/products', payload);
-        }
+        const matchingImage = urlImages.length ? '' : await findLocalProductImagePath(form.name);
+        const images = urlImages.length ? urlImages : matchingImage ? [matchingImage] : existingImages;
+        const payload = { ...form, images: images.length ? images : [getLocalProductImagePath(form.name)] };
+        if (!payload.category) delete payload.category;
+        if (editingId) await api.put(`/admin/products/${editingId}`, payload);
+        else await api.post('/admin/products', payload);
       }
       showToast(editingId ? 'Product updated' : 'Product created');
       setModalOpen(false);
@@ -159,8 +158,8 @@ export default function AdminProducts() {
                 <div className="field"><label>Brand</label><input required value={form.brand} onChange={(e) => setForm({ ...form, brand: e.target.value })} /></div>
                 <div className="field">
                   <label>Category</label>
-                  <select required value={form.category} onChange={(e) => setForm({ ...form, category: e.target.value })}>
-                    <option value="">Select category</option>
+                  <select value={form.category} onChange={(e) => setForm({ ...form, category: e.target.value })}>
+                    <option value="">No category (optional)</option>
                     {categories.map((c) => <option key={c._id} value={c._id}>{c.name}</option>)}
                   </select>
                 </div>
@@ -200,12 +199,11 @@ export default function AdminProducts() {
                   </div>
                 )}
 
-                <input type="file" accept="image/png, image/jpeg, image/webp" multiple onChange={handleFilePick} style={{ marginBottom: 10 }} />
                 <p style={{ fontSize: '.76rem', color: 'var(--gray-mid)', margin: '0 0 10px' }}>
-                  Upload up to 5 photos from your computer (jpg, png, or webp). Or, if you'd rather link to
-                  images already hosted online, paste URLs below instead — leave the file picker empty in that case.
+                  Choose photos to upload to Vercel Blob, or leave the picker empty to use a matching name-based image.
                 </p>
-                <input value={form.images} onChange={(e) => setForm({ ...form, images: e.target.value })} placeholder="https://example.com/photo1.jpg, https://example.com/photo2.jpg" />
+                <input type="file" accept="image/png, image/jpeg, image/webp" multiple onChange={handleFilePick} style={{ marginBottom: 10 }} />
+                <input value={form.images} onChange={(e) => setForm({ ...form, images: e.target.value })} placeholder="/products/image-name.jpg or https://example.com/photo.jpg" />
               </div>
               <div style={{ display: 'flex', gap: 16, marginBottom: 16, flexWrap: 'wrap' }}>
                 <label style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: '.85rem' }}><input type="checkbox" checked={form.isFeatured} onChange={(e) => setForm({ ...form, isFeatured: e.target.checked })} /> Featured</label>
