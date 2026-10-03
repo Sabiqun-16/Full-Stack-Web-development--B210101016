@@ -9,11 +9,16 @@ export function resolveImageUrl(src) {
 }
 
 const localImageBasePath = (name) => `/products/${name.toLowerCase().replace(/\s+/g, '-')}`;
+const localImageAliases = {
+  'international gluta bar bouncy bright': '/products/bathing-soap-bar.jpg',
+};
 
 export const getLocalProductImagePath = (name) => `${localImageBasePath(name)}.jpg`;
 
 export async function findLocalProductImagePath(name) {
   const candidates = ['jpg', 'jpeg', 'png', 'webp'].map((extension) => `${localImageBasePath(name)}.${extension}`);
+  const alias = localImageAliases[name.toLowerCase()];
+  if (alias) candidates.unshift(alias);
   const matches = await Promise.all(candidates.map(async (path) => {
     try {
       const response = await fetch(path, { method: 'HEAD' });
