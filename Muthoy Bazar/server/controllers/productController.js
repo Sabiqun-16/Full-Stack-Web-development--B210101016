@@ -93,14 +93,18 @@ exports.getAdminProducts = async (req, res, next) => {
     const pageNum = Math.max(1, Number(page));
     const limitNum = Math.max(1, Number(limit));
     const skip = (pageNum - 1) * limitNum;
-    const [products, total] = await Promise.all([
-      Product.find(filter)
-        .populate('category', 'name slug')
-        .sort({ createdAt: -1 })
-        .skip(skip)
-        .limit(limitNum),
-      Product.countDocuments(filter),
-    ]);
+    const allProducts = await Product.find(filter)
+      .populate('category', 'name slug')
+      .sort({ isActive: -1, updatedAt: -1, createdAt: -1 });
+    const seenSkus = new Set();
+    const uniqueProducts = allProducts.filter((product) => {
+      const key = product.sku ? product.sku.trim().toUpperCase() : product._id.toString();
+      if (seenSkus.has(key)) return false;
+      seenSkus.add(key);
+      return true;
+    });
+    const total = uniqueProducts.length;
+    const products = uniqueProducts.slice(skip, skip + limitNum);
 
     res.json({
       success: true,
