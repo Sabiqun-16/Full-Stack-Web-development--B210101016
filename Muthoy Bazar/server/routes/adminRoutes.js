@@ -14,6 +14,7 @@ router.get('/users', adminCtrl.getUsers);
 router.put('/users/:id', adminCtrl.updateUser);
 router.delete('/users/:id', adminCtrl.deleteUser);
 
+router.get('/products', productCtrl.getAdminProducts);
 router.post('/products', upload.array('images', 5), productCtrl.createProduct);
 router.put('/products/:id', upload.array('images', 5), productCtrl.updateProduct);
 router.delete('/products/:id', productCtrl.deleteProduct);

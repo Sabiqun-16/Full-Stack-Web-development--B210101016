@@ -21,7 +21,7 @@ export default function AdminProducts() {
 
   const loadProducts = () => {
     setLoading(true);
-    api.get('/products', { params: { page, limit: 15 } }).then((res) => {
+    api.get('/admin/products', { params: { page, limit: 15 } }).then((res) => {
       setProducts(res.data.products);
       setPages(res.data.pages);
     }).finally(() => setLoading(false));

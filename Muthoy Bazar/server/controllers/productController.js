@@ -81,6 +81,40 @@ exports.getProducts = async (req, res, next) => {
     next(err);
   }
 };
+
+exports.getAdminProducts = async (req, res, next) => {
+  try {
+    const { page = 1, limit = 15, q, category, brand } = req.query;
+    const filter = {};
+    if (q) filter.$text = { $search: q };
+    if (category) filter.category = category;
+    if (brand) filter.brand = { $in: brand.split(',') };
+
+    const pageNum = Math.max(1, Number(page));
+    const limitNum = Math.max(1, Number(limit));
+    const skip = (pageNum - 1) * limitNum;
+    const [products, total] = await Promise.all([
+      Product.find(filter)
+        .populate('category', 'name slug')
+        .sort({ createdAt: -1 })
+        .skip(skip)
+        .limit(limitNum),
+      Product.countDocuments(filter),
+    ]);
+
+    res.json({
+      success: true,
+      count: products.length,
+      total,
+      page: pageNum,
+      pages: Math.ceil(total / limitNum),
+      products,
+    });
+  } catch (err) {
+    next(err);
+  }
+};
+
 // GET /api/products/suggestions?q=
 exports.getSearchSuggestions = async (req, res, next) => {
   try {
