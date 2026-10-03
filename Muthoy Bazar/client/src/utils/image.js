@@ -11,6 +11,16 @@ export function resolveImageUrl(src) {
 const localImageBasePath = (name) => `/products/${name.toLowerCase().replace(/\s+/g, '-')}`;
 const localImageAliases = {
   'international gluta bar bouncy bright': '/products/bathing-soap-bar.jpg',
+  'liquid detergent': '/products/liquid-detergent.webp',
+  'anti-dandruff shampoo': '/products/anti-dandruff-shampoo.jpg',
+  'toilet tissue roll (4-pack)': '/products/toilet-tissue-roll-(4-pack).jpg',
+  'fluoride toothpaste': '/products/fluoride-toothpast-colgate.png',
+  'almonds': '/products/Almonds.jpg',
+  'chia seeds': '/products/Chia%20Seeds.jpg',
+  'vermicelli (shemai)': '/products/vermicelli-(Shemai).jpg',
+  'mineral water 5l jar': '/products/mineral-water-5L-jar.jpg',
+  'roasted thai peanuts': '/products/roasted-peanuts.jpeg',
+  'mango fruit juice': '/products/Mango-fruit-juice.jpg',
 };
 
 export const getLocalProductImagePath = (name) => `${localImageBasePath(name)}.jpg`;

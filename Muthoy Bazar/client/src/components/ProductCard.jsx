@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 import { useAuth } from '../context/AuthContext';
@@ -6,6 +6,7 @@ import { useToast } from '../context/ToastContext';
 import ProductImage from './ProductImage';
 
 export default function ProductCard({ product }) {
+  const [imageMissing, setImageMissing] = useState(false);
   const { addToCart } = useCart();
   const { user } = useAuth();
   const { showToast } = useToast();
@@ -15,6 +16,8 @@ export default function ProductCard({ product }) {
     product.discountPrice > 0 ? product.discountPrice : product.price;
 
   const outOfStock = product.stock <= 0;
+
+  if (imageMissing) return null;
 
   const handleAdd = async (e) => {
     e.preventDefault();
@@ -47,7 +50,7 @@ export default function ProductCard({ product }) {
       ) : null}
 
       <Link to={`/product/${product._id}`} className="product-media">
-        <ProductImage product={product} loading="lazy" />
+        <ProductImage product={product} loading="lazy" onMissing={() => setImageMissing(true)} />
       </Link>
 
       <div className="product-body">
