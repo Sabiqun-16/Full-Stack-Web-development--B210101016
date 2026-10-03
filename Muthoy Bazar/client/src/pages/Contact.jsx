@@ -37,9 +37,9 @@ export default function Contact() {
           <div className="contact-info-card">
             <h3>Get in touch</h3>
             <ul>
-              <li>WhatsApp: 01739-205559</li>
-              <li>Mobile: +880 1612-633433</li>
-              <li>Email: faysalimam42@gmail.com</li>
+              <li>WhatsApp: <a href="https://wa.me/8801612633433" target="_blank" rel="noreferrer">+880 1612-633433</a></li>
+              <li>Email: <a href="mailto:faysalimam42@gmail.com">faysalimam42@gmail.com</a></li>
+              <li>Facebook: <a href="https://www.facebook.com/MuthoyBazaar" target="_blank" rel="noreferrer">Muthoy Bazaar</a></li>
               <li>Location: 14/1, Abdul Latif Store, Shyambazar,Across Buriganga River, Dhaka, Bangladesh</li>
             </ul>
           </div>
