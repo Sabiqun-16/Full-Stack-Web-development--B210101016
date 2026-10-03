@@ -26,16 +26,19 @@ const localImageAliases = {
 export const getLocalProductImagePath = (name) => `${localImageBasePath(name)}.jpg`;
 
 export async function findLocalProductImagePath(name) {
-  const candidates = ['jpg', 'jpeg', 'png', 'webp'].map((extension) => `${localImageBasePath(name)}.${extension}`);
   const alias = localImageAliases[name.toLowerCase()];
-  if (alias) candidates.unshift(alias);
-  const matches = await Promise.all(candidates.map(async (path) => {
+  const candidates = [
+    ...(alias ? [alias] : []),
+    ...['jpg', 'jpeg', 'png', 'webp'].map((extension) => `${localImageBasePath(name)}.${extension}`),
+  ];
+
+  for (const path of new Set(candidates)) {
     try {
       const response = await fetch(path, { method: 'HEAD' });
-      return response.ok && response.headers.get('content-type')?.startsWith('image/') ? path : '';
+      if (response.ok && response.headers.get('content-type')?.startsWith('image/')) return path;
     } catch {
-      return '';
+      continue;
     }
-  }));
-  return matches.find(Boolean) || '';
+  }
+  return '';
 }
