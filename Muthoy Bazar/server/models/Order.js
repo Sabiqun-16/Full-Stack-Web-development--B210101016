@@ -13,6 +13,12 @@ const orderItemSchema = new mongoose.Schema(
 
 const orderSchema = new mongoose.Schema(
   {
+    orderNumber: {
+      type: String,
+      unique: true,
+      sparse: true,
+      trim: true,
+    },
     user: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
     orderItems: [orderItemSchema],
     shippingAddress: {
@@ -49,5 +55,11 @@ const orderSchema = new mongoose.Schema(
   },
   { timestamps: true }
 );
+
+orderSchema.pre('validate', function () {
+  if (!this.orderNumber) {
+    this.orderNumber = `MB-${this._id.toString().toUpperCase()}`;
+  }
+});
 
 module.exports = mongoose.model('Order', orderSchema);

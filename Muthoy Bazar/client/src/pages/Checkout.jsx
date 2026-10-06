@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import api from '../api/api';
 import { useCart } from '../context/CartContext';
 import { useAuth } from '../context/AuthContext';
 
 export default function Checkout() {
-  const { cart, summary, clearCartLocal, refreshCart } = useCart();
+  const { cart, summary, clearCartLocal, refreshCart, loading } = useCart();
   const { user } = useAuth();
   const items = cart.items || [];
 
@@ -17,11 +17,20 @@ export default function Checkout() {
   const [placedOrder, setPlacedOrder] = useState(null);
   const [submitting, setSubmitting] = useState(false);
 
+  useEffect(() => {
+    refreshCart();
+  }, [refreshCart]);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError('');
     setSubmitting(true);
     try {
+      const latestCart = await refreshCart();
+      if (!latestCart?.items?.length) {
+        setError('Your cart was updated and is now empty. Please add products again.');
+        return;
+      }
       const payload = {
         shippingAddress: form,
         billingAddress: sameAsShipping ? { ...form, sameAsShipping: true } : { ...billing, sameAsShipping: false },
@@ -33,6 +42,9 @@ export default function Checkout() {
       refreshCart();
     } catch (err) {
       setError(err.response?.data?.message || 'Could not place order. Please try again.');
+      if (err.response?.data?.message === 'Your cart is empty') {
+        await refreshCart();
+      }
     } finally {
       setSubmitting(false);
     }
@@ -53,6 +65,10 @@ export default function Checkout() {
         </div>
       </div>
     );
+  }
+
+  if (loading && items.length === 0) {
+    return <div className="wrap"><div className="empty-state" style={{ padding: '90px 20px' }}>Loading your cart...</div></div>;
   }
 
   if (items.length === 0) {

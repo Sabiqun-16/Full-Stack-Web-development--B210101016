@@ -13,13 +13,14 @@ export function CartProvider({ children }) {
   const refreshCart = useCallback(async () => {
     if (!user) {
       setCart({ items: [] });
-      return;
+      return { items: [] };
     }
     setLoading(true);
     try {
       const res = await api.get('/cart');
       setCart(res.data.cart);
       setSummary(res.data.summary);
+      return res.data.cart;
     } finally {
       setLoading(false);
     }
