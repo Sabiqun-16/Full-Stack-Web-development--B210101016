@@ -29,11 +29,11 @@ export default function Register() {
       <div className="auth-wrap">
         <h2>Create Account</h2>
         <p className="auth-sub">Join Muthoy Bazar for faster checkout</p>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} autoComplete="off">
           <div className="field"><label>Full name</label><input required value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} /></div>
-          <div className="field"><label>Email address</label><input required type="email" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} /></div>
+          <div className="field"><label>Email address</label><input required type="email" autoComplete="off" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} /></div>
           <div className="field"><label>Phone number</label><input value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} placeholder="01XXX-XXXXXX" /></div>
-          <div className="field"><label>Password</label><input required type="password" minLength={6} value={form.password} onChange={(e) => setForm({ ...form, password: e.target.value })} /></div>
+          <div className="field"><label>Password</label><input required type="password" autoComplete="new-password" minLength={6} value={form.password} onChange={(e) => setForm({ ...form, password: e.target.value })} /></div>
           {error && <p className="error-text">{error}</p>}
           <button className="btn btn-primary btn-block" type="submit" disabled={submitting}>{submitting ? 'Creating account...' : 'Register'}</button>
         </form>

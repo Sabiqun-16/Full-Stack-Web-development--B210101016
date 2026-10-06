@@ -37,7 +37,6 @@ export default function Login() {
           <button className="btn btn-primary btn-block" type="submit" disabled={submitting}>{submitting ? 'Logging in...' : 'Log In'}</button>
         </form>
         <p className="auth-switch">Don't have an account? <Link to="/register">Register</Link></p>
-        <p className="auth-switch" style={{ fontSize: '.78rem' }}>Demo: demo@muthoybazar.com / Demo@12345<br />Admin: admin@muthoybazar.com / Admin@12345</p>
       </div>
     </div>
   );
