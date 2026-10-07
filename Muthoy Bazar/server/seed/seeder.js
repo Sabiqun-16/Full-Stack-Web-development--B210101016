@@ -1,5 +1,4 @@
 require('dotenv').config();
-const mongoose = require('mongoose');
 const connectDB = require('../config/db');
 
 const User = require('../models/User');
@@ -24,58 +23,69 @@ const run = async () => {
       Order.deleteMany(),
       Review.deleteMany(),
     ]);
+
     console.log('All data destroyed.');
     return process.exit(0);
   }
 
-  await Promise.all([
-    Category.deleteMany(),
-    Product.deleteMany(),
-    Cart.deleteMany(),
-    Order.deleteMany(),
-    Review.deleteMany(),
-  ]);
+  await Category.deleteMany({});
+  await Product.deleteMany({});
 
-  // Admin + demo user (idempotent)
+  const adminEmail = 'sabiqun63@gmail.com';
 
-const adminEmail = 'sabiqun63@gmail.com';
+  let admin = await User.findOne({ email: adminEmail });
 
-await User.findOneAndDelete({ email: adminEmail });
+  if (!admin) {
+    await User.create({
+      name: 'Sabiqunnahar',
+      email: adminEmail,
+      password: 'n55974',
+      role: 'admin',
+      phone: '+8801612633433',
+    });
 
-const admin = await User.create({
-  name: 'Sabiqunnahar',
-  email: adminEmail,
-  password: 'n55974',
-  role: 'admin',
-  phone: '+8801612633433',
-});
+    console.log('Admin user created.');
+  } else {
+    console.log('Admin user already exists. Keeping it.');
+  }
 
   const demoEmail = 'demo@muthoybazar.com';
+
   let demoUser = await User.findOne({ email: demoEmail });
+
   if (!demoUser) {
-    demoUser = await User.create({
+    await User.create({
       name: 'Demo Customer',
       email: demoEmail,
       password: 'Demo@12345',
       role: 'user',
       phone: '01739205559',
     });
+
+    console.log('Demo customer created.');
+  } else {
+    console.log('Demo customer already exists. Keeping it.');
   }
 
   const categories = await Category.insertMany(categorySeed);
-  const categoryIdByName = categories.reduce((acc, c) => {
-    acc[c.name] = c._id;
+
+  const categoryIdByName = categories.reduce((acc, category) => {
+    acc[category.name] = category._id;
     return acc;
   }, {});
 
   const products = buildProducts(categoryIdByName);
+
   await Product.insertMany(products);
 
   console.log('--------------------------------------------------');
-  console.log(`Seed complete: ${categories.length} categories, ${products.length} products`);
+  console.log(
+    `Seed complete: ${categories.length} categories, ${products.length} products`
+  );
   console.log('Admin login   -> sabiqun63@gmail.com / n55974');
   console.log('Demo customer -> demo@muthoybazar.com / Demo@12345');
   console.log('--------------------------------------------------');
+
   process.exit(0);
 };
 
