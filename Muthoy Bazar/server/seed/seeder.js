@@ -28,8 +28,8 @@ const run = async () => {
     return process.exit(0);
   }
 
-  await Category.deleteMany({});
-  await Product.deleteMany({});
+  //await Category.deleteMany({});
+  //await Product.deleteMany({});
 
   const adminEmail = 'sabiqun63@gmail.com';
 
