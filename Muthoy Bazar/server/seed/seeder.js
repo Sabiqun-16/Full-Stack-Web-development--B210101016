@@ -14,7 +14,11 @@ const { buildProducts } = require('./products');
 const run = async () => {
   await connectDB();
 
+  // NEVER delete existing data during normal seeding.
+  // Destructive mode is available only with: node seed/seeder.js -d
   if (process.argv.includes('-d')) {
+    console.log('WARNING: Destructive mode enabled.');
+
     await Promise.all([
       User.deleteMany(),
       Category.deleteMany(),
@@ -28,8 +32,9 @@ const run = async () => {
     return process.exit(0);
   }
 
-  //await Category.deleteMany({});
-  //await Product.deleteMany({});
+  // --------------------------------------------------
+  // ADMIN USER
+  // --------------------------------------------------
 
   const adminEmail = 'sabiqun63@gmail.com';
 
@@ -49,6 +54,10 @@ const run = async () => {
     console.log('Admin user already exists. Keeping it.');
   }
 
+  // --------------------------------------------------
+  // DEMO USER
+  // --------------------------------------------------
+
   const demoEmail = 'demo@muthoybazar.com';
 
   let demoUser = await User.findOne({ email: demoEmail });
@@ -67,29 +76,67 @@ const run = async () => {
     console.log('Demo customer already exists. Keeping it.');
   }
 
-  const categories = await Category.insertMany(categorySeed);
+  // --------------------------------------------------
+  // CATEGORIES
+  // --------------------------------------------------
 
-  const categoryIdByName = categories.reduce((acc, category) => {
-    acc[category.name] = category._id;
-    return acc;
-  }, {});
+  const categoryIdByName = {};
+
+  for (const categoryData of categorySeed) {
+    let category = await Category.findOne({
+      name: categoryData.name,
+    });
+
+    if (!category) {
+      category = await Category.create(categoryData);
+      console.log(`Category created: ${category.name}`);
+    } else {
+      console.log(`Category already exists: ${category.name}`);
+    }
+
+    categoryIdByName[category.name] = category._id;
+  }
+
+  // --------------------------------------------------
+  // PRODUCTS
+  // --------------------------------------------------
 
   const products = buildProducts(categoryIdByName);
 
-  await Product.insertMany(products);
+  let createdProducts = 0;
+  let existingProducts = 0;
+
+  for (const productData of products) {
+    const existingProduct = await Product.findOne({
+      sku: productData.sku,
+    });
+
+    if (!existingProduct) {
+      await Product.create(productData);
+      createdProducts++;
+      console.log(`Product created: ${productData.name}`);
+    } else {
+      existingProducts++;
+      console.log(`Product already exists: ${productData.name}`);
+    }
+  }
+
+  // --------------------------------------------------
+  // SUMMARY
+  // --------------------------------------------------
 
   console.log('--------------------------------------------------');
-  console.log(
-    `Seed complete: ${categories.length} categories, ${products.length} products`
-  );
-  console.log('Admin login   -> sabiqun63@gmail.com / n55974');
-  console.log('Demo customer -> demo@muthoybazar.com / Demo@12345');
+  console.log('Seed process completed safely.');
+  console.log(`Products created: ${createdProducts}`);
+  console.log(`Products already existed: ${existingProducts}`);
+  console.log('Existing products were NOT deleted.');
+  console.log('Existing categories were NOT deleted.');
   console.log('--------------------------------------------------');
 
   process.exit(0);
 };
 
 run().catch((err) => {
-  console.error(err);
+  console.error('Seed error:', err);
   process.exit(1);
 });
